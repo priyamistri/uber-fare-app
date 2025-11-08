@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Local env & data
+.env
+uber.csv
+
+# OS
+.DS_Store
