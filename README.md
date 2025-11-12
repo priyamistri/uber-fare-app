@@ -1,35 +1,89 @@
-# Uber Fare API — Render Deploy
+# 🚕 Uber Fare Predictor API — Run Locally
 
-This pack contains the two needed files for a free deploy on Render:
-- `requirements.txt`
-- `Procfile`
+This project provides a **Machine Learning-powered Uber Fare Prediction API** built with **Python** and **Flask**, using a **Random Forest Regression Model** trained on Uber’s open fare dataset.
 
-## Steps
 
-1. Put these files next to your existing `uber_fare_app.py` and `uber_fare_rf_model.pkl`.
-   Folder example:
-   ```
-   /your-project/
-   ├── uber_fare_app.py
-   ├── uber_fare_rf_model.pkl
-   ├── requirements.txt
-   ├── Procfile
-   ├── .gitignore
-   └── (optional) .env
-   ```
+## 📦 Files Included
 
-2. Push the folder to a GitHub repo.
+* `uber_fare_app.py` → main Flask app
+* `uber_fare_rf_model.pkl` → trained Random Forest model
+* `requirements.txt` → required dependencies
+* `Procfile` → for optional deployment (not needed locally)
 
-3. Go to https://render.com → New → Web Service → connect repo.
-   - Build Command: (leave default) `pip install -r requirements.txt`
-   - Start Command: `gunicorn uber_fare_app:app`
-   - Region: any
-   - Plan: Free
+---
 
-4. After deploy, your public API will be at:
-   - `https://<your-service>.onrender.com/predict`
-   - `https://<your-service>.onrender.com/autocomplete`
+## ⚙️ How to Run the Project Locally
 
-### Notes
-- If you keep `.env` locally, do not upload it. Add any required keys in Render → Environment.
-- The app loads `uber_fare_rf_model.pkl` from the same folder. Keep the same filename.
+Follow these steps to set up and run the app on your system 👇
+
+### 1️⃣ Clone or Download the Repository
+
+```bash
+git clone https://github.com/your-username/uber-fare-api.git
+cd uber-fare-api
+```
+
+### 2️⃣ Create a Virtual Environment (optional but recommended)
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+* **Windows:** `venv\Scripts\activate`
+* **Mac/Linux:** `source venv/bin/activate`
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run the App
+
+```bash
+python uber_fare_app.py
+```
+
+You should see output like:
+
+```
+Running on http://127.0.0.1:5000/
+```
+
+### 5️⃣ Test the API
+
+Open your browser or use any API tool (like Postman) to access:
+
+* **Predict endpoint:**
+
+  ```
+  http://127.0.0.1:5000/predict
+  ```
+* **Autocomplete endpoint:**
+
+  ```
+  http://127.0.0.1:5000/autocomplete
+  ```
+
+---
+
+## 🧠 Notes
+
+* Make sure `uber_fare_rf_model.pkl` is in the **same folder** as `uber_fare_app.py`.
+* If using environment variables, create a `.env` file (optional).
+* Works with **Python 3.8+**.
+
+---
+
+## ✅ After Successfully Running
+
+Once your backend is running locally, you can check out the **live web app interface** here:
+👉 [**Uber Fare Predictor Frontend**](https://uberfarepredictor.netlify.app/)
+
+---
+
+### 💻 Tech Stack
+
+Python · Flask · Scikit-learn · Random Forest · Streamlit · NLP · LLM · Machine Learning
